@@ -26,7 +26,7 @@ You should input a number -> findKitty()
 
 Make an overload for getTheKitty() -> getTheKitty(randomNumber)
 
-Do not accept (numbers > max of kitties)
+Do not accept (numbers > #maxOfKitties)
 
 Get the images of the Kitties via API 
 https://api.cryptokitties.co/kitties/989999
