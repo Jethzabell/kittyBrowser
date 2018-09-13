@@ -29,7 +29,6 @@ https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f
 add button attribute -> 'disable' and change text "Loading.."
 then remove 'disable' attribute and change buttonText to original text after promise is complete.
 
-- add label with ID of the randome number
 */
 
 class Browser extends Component {
