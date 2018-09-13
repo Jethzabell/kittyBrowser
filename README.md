@@ -10,7 +10,7 @@ To be able to run CryptoKitties on your browser you'll need to install [Metamask
 
 ```Javascript
 
-FindKitty -> When you open the page if you click Find Kitty it will throw an error, since the state haven't change.
+FindKitty -> When you open the page if you click Find Kitty it will throw an error, since the state havent change.
 FindKitty -> If you click 2 consecutive times FindKitty it will throw same error
 
 ```
