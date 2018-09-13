@@ -19,13 +19,13 @@ If you click 2 consecutive times "Find Kitty" (with the same ID) it will throw t
 
 ```
 
-### Things to do:
+### Things I can add/do:
 
 ```Javascript
 
 Make an overload for getTheKitty() -> getTheKitty(randomNumber)
 
-I can get the images of the Kitties via API 
+Get the images of the Kitties via API 
 https://api.cryptokitties.co/kitties/989999
 Or
 https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/989999.svg
