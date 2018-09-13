@@ -13,8 +13,9 @@ To be able to run CryptoKitties on your browser you'll need to install [Metamask
 
 ```Javascript
 
-FindKitty -> When you open the website if you click "Find Kitty" it will throw an error, since the state havent change.
-FindKitty -> If you click 2 consecutive times "Find Kitty" (with the same ID) it will throw the same error.
+FindKitty():
+When you open the website if you click "Find Kitty" right away it will throw an error, since the state has not change yet.
+If you click 2 consecutive times "Find Kitty" (with the same ID) it will throw the same error.
 
 ```
 
@@ -22,17 +23,17 @@ FindKitty -> If you click 2 consecutive times "Find Kitty" (with the same ID) it
 
 ```Javascript
 
-Make an overload getTheKitty() -> to get Random Kitty
+Make an overload for getTheKitty() -> getTheKitty(randomNumber)
 
-I can get the pictures of the Kittys via API 
-https://api.cryptokitties.co/kitties/989999 
-https://api.cryptokitties.co/kitties/`id`
+I can get the images of the Kitties via API 
+https://api.cryptokitties.co/kitties/989999
 Or
 https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f8e7a266d/989999.svg
  
-Customize the style, might use Bootstrapt-React
+Customize the style(Bootstrapt-React)
 
-add jQuery when you getKitty()
-add button attribute -> 'disable' and change button->text to "Loading.."
-then remove 'disable' attribute and change buttonText to original text after promise is complete.
+Add jQuery when you getKitty()
+
+When you click FindKitty() -> Add attribute -> 'disable' and change button -> text to "Loading.."
+Then remove 'disable' attribute and change buttonText to original text after promise is complete.
 ```
