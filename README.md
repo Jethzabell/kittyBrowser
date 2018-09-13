@@ -32,8 +32,7 @@ https://storage.googleapis.com/ck-kitty-image/0x06012c8cf97bead5deae237070f9587f
  
 Customize the style(Bootstrapt-React)
 
-Add jQuery when you getKitty()
-
-When you click FindKitty() -> Add (attribute -> 'disable') and change (button -> text) to "Loading.."
+Add jQuery:
+When you click findKitty() -> Add (attribute -> 'disable') and change (button -> text) to "Loading.."
 Then remove (attribute -> 'disable') and change (button -> Text) to original text after promise is completed.
 ```
