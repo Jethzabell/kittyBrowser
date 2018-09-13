@@ -34,6 +34,6 @@ Customize the style(Bootstrapt-React)
 
 Add jQuery when you getKitty()
 
-When you click FindKitty() -> Add attribute -> 'disable' and change button -> text to "Loading.."
-Then remove 'disable' attribute and change buttonText to original text after promise is complete.
+When you click FindKitty() -> Add (attribute -> 'disable') and change (button -> text_ to "Loading.."
+Then remove (attribute -> 'disable') and change (button -> Text) to original text after promise is completed.
 ```
