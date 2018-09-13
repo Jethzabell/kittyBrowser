@@ -20,7 +20,7 @@ If you click findKitty() 2 consecutive times (with the same ID) you will get sam
 You should input a number -> findKitty()
 ```
 
-### Things I should do:
+### Future work:
 
 ```Javascript
 
