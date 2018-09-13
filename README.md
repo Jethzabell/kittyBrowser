@@ -15,7 +15,7 @@ To be able to run CryptoKitties on your browser you'll need to install [Metamask
 
 FindKitty():
 If you click findKitty() right away it will throw an error, since the state has not changed yet.
-If you click findKitty() 2 consecutive times (with the same ID) it will throw the same error.
+If you click findKitty() 2 consecutive times (with the same ID) you will get same error as above.
 
 You should input a number -> findKitty()
 ```
