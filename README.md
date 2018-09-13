@@ -14,9 +14,10 @@ To be able to run CryptoKitties on your browser you'll need to install [Metamask
 ```Javascript
 
 FindKitty():
-If you click findKitty() right away it will throw an error, since the state has not change yet.
+If you click findKitty() right away it will throw an error, since the state has not changed yet.
 If you click findKitty() 2 consecutive times (with the same ID) it will throw the same error.
 
+You should input a number -> findKitty()
 ```
 
 ### Things I should do:
@@ -24,6 +25,8 @@ If you click findKitty() 2 consecutive times (with the same ID) it will throw th
 ```Javascript
 
 Make an overload for getTheKitty() -> getTheKitty(randomNumber)
+
+Do not accept (numbers > max of kitties)
 
 Get the images of the Kitties via API 
 https://api.cryptokitties.co/kitties/989999
