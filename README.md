@@ -7,11 +7,6 @@ To be able to run CryptoKitties on your browser you'll need to install [Metamask
 ![](https://i.imgur.com/FcIPrMw.gif)
 
 
-
-![](https://i.imgur.com/noPumHu.gif)
-
-### Future work:
-
 ```Javascript
 
 Input():
@@ -31,3 +26,5 @@ Get the images of the Kitties via API
 
 If no input [state changed] you would not be able to findKitty() -> btn disable.
 ```
+
+![](https://i.imgur.com/noPumHu.gif)
