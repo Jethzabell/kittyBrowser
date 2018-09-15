@@ -6,6 +6,7 @@ To be able to run CryptoKitties on your browser you'll need to install [Metamask
 
 ![](https://i.imgur.com/GDzQobs.gif)
 
+
 ### Things to fix:
 
 ```Javascript
