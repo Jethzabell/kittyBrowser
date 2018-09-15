@@ -15,6 +15,10 @@ trim() -> "  1   4 " -> "14"
 IsNan() -> Only accepts numbers
 If no input [state changed] you would not be able to click findKitty() -> btn disable.
 
+Check two different ways if ID is > than #maxOfKitties;
+attribute -> 'max' = {Max}
+method -> parseInt(id, 10) > parseInt(Max,10)
+
 API():
 
 Handles:
