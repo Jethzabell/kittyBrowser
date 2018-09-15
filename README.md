@@ -4,8 +4,7 @@
 
 To be able to run CryptoKitties on your browser you'll need to install [Metamask](http://metamask.io/) or use a dedicated Ethereum browser like Mist or Parity.
 
-![](https://i.imgur.com/FcIPrMw.gif)
-
+![](https://i.imgur.com/3KKqJp2.gif)
 
 ```Javascript
 
@@ -27,5 +26,3 @@ Loading Image
 Get the images of the Kitties via API 
 
 ```
-
-![](https://i.imgur.com/3KKqJp2.gif)
