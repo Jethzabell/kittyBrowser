@@ -28,4 +28,4 @@ Get the images of the Kitties via API
 
 ```
 
-![](https://i.imgur.com/noPumHu.gif)
+![](https://i.imgur.com/3KKqJp2.gif)
