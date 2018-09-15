@@ -14,17 +14,18 @@ Input():
 Do not accept (input > #maxOfKitties) 
 trim() -> "  1   4 " -> "14"
 IsNan() -> Only accepts numbers
+If no input [state changed] you would not be able to click findKitty() -> btn disable.
 
 API():
 
 Handles:
 Unable to connect to Crypto Kitty server
-Unable to find the Kitty Picture -> like Kitty #222 -> Loading Image
+Unable to find the Kitty Picture -> like Kitty #222
+Loading Image
       
 #maxOfKitties requested from API
 Get the images of the Kitties via API 
 
-If no input [state changed] you would not be able to findKitty() -> btn disable.
 ```
 
 ![](https://i.imgur.com/noPumHu.gif)
