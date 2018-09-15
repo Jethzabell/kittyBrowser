@@ -9,11 +9,6 @@ input[type="text"] {
 }
 
 input[type="submit"] {
-    background-color: #f44336da;
-    color: white;
-}
-
-input[type="submit"] {
     margin-left: -30px;
     width: 30px;
     background-color: #f44336c0; 
@@ -45,3 +40,18 @@ div {
     padding: 20px;
 }
 
+img {
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    width: 170px;
+    background-color: #e6e6e6;
+    text-align: center;
+
+}
+
+/* Clear floats after the columns */
+.row {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding-right: 270px;
+}
