@@ -10,26 +10,27 @@ const request = require('request');
 
 /*
 
-Input():
+### Things to fix:
 
-Do not accept (input > #maxOfKitties) 
-trim() -> "  1   4 " -> "14"
-IsNan() -> Only accepts numbers
-If no input [state changed] you would not be able to click findKitty() -> btn disable.
+FindKitty():
+If you click findKitty() right away it will throw an error, since the state has not changed yet.
+If you click findKitty() 2 consecutive times (with the same ID) you will get same error as above.
 
-Check two different ways if ID is > than #maxOfKitties;
-attribute -> 'max' = {Max}
-method -> parseInt(id, 10) > parseInt(Max,10)
+You should input a number -> findKitty()
 
-API():
+### Future work:
 
-Handles:
-Unable to connect to Crypto Kitty server
-Unable to find the Kitty Picture -> like Kitty #222
-Loading Image
-      
-#maxOfKitties requested from API
-Get the images of the Kitties via API 
+Make an overload for getTheKitty() -> getTheKitty(randomNumber)
+
+done - Do not accept (numbers > #maxOfKitties) 
+getMaxKitties() via API
+
+done - getImage() of the Kitties via API - https://api.cryptokitties.co/kitties/989999
+
+Add jQuery:
+When you click findKitty() -> Add (attribute -> 'disable') and change (button -> text) to "Loading.."
+Then remove (attribute -> 'disable') and change (button -> Text) to original text after promise is completed.
+
 */
 
 //max #of Kitties
@@ -65,7 +66,7 @@ class Browser extends Component {
     return kittyContract;
   }
 
-  //calling getContract() and getMaxKitties() -> disable getKittyBtn
+  //calling getContract() and getMaxKitties()
   componentDidMount = () => {
     this.getTheKitty();
     this.getMaxKitties();
@@ -81,7 +82,7 @@ class Browser extends Component {
     document.getElementById("bithTimeSpan").innerHTML = "";
   }
 
-  //request to server response.total == max number of kitties.
+  //request to server response.total === max number of kitties.
   getMaxKitties = () => {
     request({
         url: 'https://api.cryptokitties.co/kitties',
@@ -92,13 +93,14 @@ class Browser extends Component {
             console.log('Unable to connect to Crypto Kitty server');
         }else if(request.rawHeaders[17] === 'text/html; charset=utf-8'){
             console.log('Unable to connect to Crypto Kitty server, error 404');
-        }else if(body.total){ 
+        }else if(body.total){
+            console.log(JSON.stringify(body.total, undefined, 2)); 
             Max = JSON.stringify(body.total, undefined, 2);
         }
     });
   }
 
-  //get kitty image 
+  //get image also check
   getImage = (id) => {
     request({
         url: `https://api.cryptokitties.co/kitties/${id}`,
@@ -112,7 +114,7 @@ class Browser extends Component {
             console.log('Unable to find the Kitty Picture');
             document.getElementById("kittyIMG").src ='https://media.giphy.com/media/26xBIygOcC3bAWg3S/giphy.gif';
         }else if(body.id){
-            document.getElementById("kittyIMG").src =body.image_url;
+            document.getElementById("kittyIMG").src = body.image_url;
         }
       });
   }
@@ -132,18 +134,11 @@ class Browser extends Component {
     document.getElementById("randomID").value = randomNumber;
 
     kittyContract.methods.getKitty(randomNumber).call().then((results) => {
-      return {
-        id: this.id,
-        genes: results.genes,
-        generation: results.generation,
-        birthTime: moment.unix(results.birthTime).format('MMMM DD YYYY'),
-      }    
-    }).then((results) => {
       this.setState({
         id:results.id,
         genes: results.genes,
         generation: results.generation,
-        birthTime: results.birthTime
+        birthTime: moment.unix(results.birthTime).format('MMMM DD YYYY'),
       });
     });
    
@@ -158,16 +153,12 @@ class Browser extends Component {
     //change image while getImage() request is complete
     document.getElementById("kittyIMG").src ='https://media.giphy.com/media/GWYs1fPHqjqI8/giphy.gif';
 
+    //if(parseInt(id, 10) > parseInt(Max,10)) {
+    //this.setNotFoundText();
+    //}else {
       let kittyContract = this.getContract();
 
       kittyContract.methods.getKitty(id).call().then((results) => {
-        return {
-          id: this.id,
-          genes: results.genes,
-          generation: results.generation,
-          birthTime: moment.unix(results.birthTime).format('MMMM DD YYYY'),
-        }    
-      }).then((results) => {
         this.setState({
           id:results.id,
           genes: results.genes,
@@ -177,6 +168,7 @@ class Browser extends Component {
       });
 
       this.getImage(id);
+  //  }
   }
 
   eraseInputText = () => {
@@ -202,12 +194,11 @@ class Browser extends Component {
  
   //Set id State -> Check if input isNum
   onIdChange = (e) => {
-    const id= e.target.value;
+    const id = e.target.value;
     
     //Check if input isNum
     this.checkIfInputIsNan(id);
     console.log(e);
-    //enable getKittyBtn (was disable at getTheKitty() getRandomKitty()
     document.getElementById("getKittyBtn").disabled = false;
   };
 
@@ -230,7 +221,8 @@ class Browser extends Component {
           <button onClick={this.getTheKitty} id="getKittyBtn">Find Kitty</button>
           <button onClick={this.getRandomKitty}>Random Kitty</button>
         </div>
-                
+        
+        
         <div className="row">
           <div className="column">
             <img id="kittyIMG" src="" alt="kittyImg" max = {Max} ></img>
@@ -251,6 +243,8 @@ class Browser extends Component {
           </div>
         </div>
         
+
+
       </div>
     );
   }
