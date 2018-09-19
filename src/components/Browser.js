@@ -138,7 +138,7 @@ class Browser extends Component {
         id:results.id,
         genes: results.genes,
         generation: results.generation,
-        birthTime: moment.unix(results.birthTime).format('MMMM DD YYYY'),
+        birthTime: moment.unix(results.birthTime).format('MMMM DD YYYY')
       });
     });
    
