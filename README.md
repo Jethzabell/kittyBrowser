@@ -1,5 +1,4 @@
-# Kitty Browser : 
-https://github.com/ConsenSys/kittybrowser
+# Kitty Browser : https://github.com/ConsenSys/kittybrowser
 
 [CryptoKitties](http://cryptokitties.co) is one of the most popular distributed apps on the Ethereum Network. It's a game that allows players to purchase, collect, breed and sell various types of virtual cats.
 
